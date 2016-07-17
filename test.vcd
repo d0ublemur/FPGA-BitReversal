@@ -1,0 +1,401 @@
+$date
+	Wed Jul 13 15:40:34 2016
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module top_tb $end
+$var wire 8 ! reversed_byte [7:0] $end
+$var wire 8 " original_byte [7:0] $end
+$var wire 8 # input_bit [7:0] $end
+$var wire 1 $ clk $end
+$var wire 4 % addr [3:0] $end
+$var reg 1 & rst $end
+$scope module bit_in $end
+$var wire 4 ' addr [3:0] $end
+$var wire 8 ( bit_out [7:0] $end
+$var wire 1 & reset $end
+$var wire 1 $ clk $end
+$var reg 4 ) addr_d [3:0] $end
+$var reg 4 * addr_q [3:0] $end
+$var reg 8 + bit_out_d [7:0] $end
+$var reg 8 , bit_out_q [7:0] $end
+$upscope $end
+$scope module clk1 $end
+$var reg 1 $ clk $end
+$upscope $end
+$scope module message_mem1 $end
+$var wire 4 - addr [3:0] $end
+$var wire 8 . bit_in [7:0] $end
+$var wire 1 $ clk $end
+$var wire 1 / reset $end
+$var reg 8 0 byte_out [7:0] $end
+$upscope $end
+$scope module rev_bit $end
+$var wire 1 $ clk $end
+$var wire 8 1 original_bits [7:0] $end
+$var reg 8 2 reversed_bits [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx 2
+bx 1
+bx 0
+z/
+bx .
+bx -
+bx ,
+b0 +
+bx *
+b0 )
+bx (
+bx '
+0&
+bx %
+0$
+bx #
+bx "
+bx !
+$end
+#1
+b1 )
+bx +
+b0 #
+b0 (
+b0 .
+b0 ,
+b0 %
+b0 '
+b0 -
+b0 *
+1&
+1$
+#2
+0$
+#3
+b10 )
+b110000 +
+bx #
+bx (
+bx .
+bx ,
+b1 %
+b1 '
+b1 -
+b1 *
+1$
+#4
+0$
+#5
+b0 #
+b0 (
+b0 .
+b0 ,
+b0 %
+b0 '
+b0 -
+b0 *
+bx +
+b1 )
+1$
+0&
+#6
+0$
+#7
+b10 )
+b110000 +
+bx #
+bx (
+bx .
+bx ,
+b1 %
+b1 '
+b1 -
+b1 *
+1$
+#8
+0$
+#9
+b0xxxxxxx !
+b0xxxxxxx 2
+b11 )
+bx0 "
+bx0 0
+bx0 1
+b110000 #
+b110000 (
+b110000 .
+b110000 ,
+b10 %
+b10 '
+b10 -
+b10 *
+1$
+#10
+0$
+#11
+b0xxxxxx !
+b0xxxxxx 2
+b100 )
+bx00 "
+bx00 0
+bx00 1
+b11 %
+b11 '
+b11 -
+b11 *
+1$
+#12
+0$
+#13
+b0xxxxx !
+b0xxxxx 2
+b101 )
+bx000 "
+bx000 0
+bx000 1
+b100 %
+b100 '
+b100 -
+b100 *
+1$
+#14
+0$
+#15
+b0xxxx !
+b0xxxx 2
+b110 )
+b110001 +
+bx0000 "
+bx0000 0
+bx0000 1
+b101 %
+b101 '
+b101 -
+b101 *
+1$
+#16
+0$
+#17
+b1xxx !
+b1xxx 2
+b111 )
+bx10000 "
+bx10000 0
+bx10000 1
+b110001 #
+b110001 (
+b110001 .
+b110001 ,
+b110 %
+b110 '
+b110 -
+b110 *
+1$
+#18
+0$
+#19
+b11xx !
+b11xx 2
+b1000 )
+bx110000 "
+bx110000 0
+bx110000 1
+b111 %
+b111 '
+b111 -
+b111 *
+1$
+#20
+0$
+#21
+b111x !
+b111x 2
+b1001 )
+bx1110000 "
+bx1110000 0
+bx1110000 1
+b1000 %
+b1000 '
+b1000 -
+b1000 *
+1$
+#22
+0$
+#23
+b1111 !
+b1111 2
+b1010 )
+bx +
+b11110000 "
+b11110000 0
+b11110000 1
+b1001 %
+b1001 '
+b1001 -
+b1001 *
+1$
+#24
+0$
+#25
+b1011 )
+bx #
+bx (
+bx .
+bx ,
+b1010 %
+b1010 '
+b1010 -
+b1010 *
+1$
+#26
+0$
+#27
+b1100 )
+b1011 %
+b1011 '
+b1011 -
+b1011 *
+1$
+#28
+0$
+#29
+b1101 )
+b1100 %
+b1100 '
+b1100 -
+b1100 *
+1$
+#30
+0$
+#31
+b1110 )
+b1101 %
+b1101 '
+b1101 -
+b1101 *
+1$
+#32
+0$
+#33
+b1111 )
+b1110 %
+b1110 '
+b1110 -
+b1110 *
+1$
+#34
+0$
+#35
+b0 )
+b1111 %
+b1111 '
+b1111 -
+b1111 *
+1$
+#36
+0$
+#37
+b1 )
+b0 %
+b0 '
+b0 -
+b0 *
+1$
+#38
+0$
+#39
+b10 )
+b110000 +
+b1 %
+b1 '
+b1 -
+b1 *
+1$
+#40
+0$
+#41
+b11 )
+b110000 #
+b110000 (
+b110000 .
+b110000 ,
+b10 %
+b10 '
+b10 -
+b10 *
+1$
+#42
+0$
+#43
+b100 )
+b11 %
+b11 '
+b11 -
+b11 *
+1$
+#44
+0$
+#45
+b101 )
+b100 %
+b100 '
+b100 -
+b100 *
+1$
+#46
+0$
+#47
+b110 )
+b110001 +
+b101 %
+b101 '
+b101 -
+b101 *
+1$
+#48
+0$
+#49
+b111 )
+b110001 #
+b110001 (
+b110001 .
+b110001 ,
+b110 %
+b110 '
+b110 -
+b110 *
+1$
+#50
+0$
+#51
+b1000 )
+b111 %
+b111 '
+b111 -
+b111 *
+1$
+#52
+0$
+#53
+b1001 )
+b1000 %
+b1000 '
+b1000 -
+b1000 *
+1$
+#54
+0$
+#55
+b1010 )
+bx +
+b1001 %
+b1001 '
+b1001 -
+b1001 *
+1$
