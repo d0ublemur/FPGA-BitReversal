@@ -17,6 +17,7 @@ module top_tb;
     wire [7:0] original_byte;
     wire [7:0] reversed_byte;
 
+
     //Assigning the clock to the clock wire.
     clock clk1(.clk(clk));
 
@@ -24,7 +25,7 @@ module top_tb;
     bit_input bit_in(.clk(clk), .bit_out(input_bit), .addr(addr), .reset(rst));
     reverse_bits rev_bit(.clk(clk), .original_bits(original_byte),.reversed_bits(reversed_byte));
 
-    message_mem message_mem1(.clk(clk), .addr(addr), .bit_in(input_bit), .byte_out(original_byte));
+    message_mem message_mem1(.clk(clk), .addr(addr), .bit_in(input_bit), .byte_out(original_byte), .reset(rst));
 
 endmodule
 

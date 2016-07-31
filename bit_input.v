@@ -11,14 +11,14 @@ module bit_input(clk, bit_out, reset, addr);
     assign bit_out = bit_out_q;
     assign addr    = addr_q;
 
-    assign bits_out[7] = "1";
-    assign bits_out[6] = "1";
-    assign bits_out[5] = "1";
-    assign bits_out[4] = "1";
-    assign bits_out[3] = "0";
-    assign bits_out[2] = "0";
-    assign bits_out[1] = "0";
-    assign bits_out[0] = "0";
+    assign bits_out[7] = "0";
+    assign bits_out[6] = "0";
+    assign bits_out[5] = "0";
+    assign bits_out[4] = "0";
+    assign bits_out[3] = "1";
+    assign bits_out[2] = "1";
+    assign bits_out[1] = "1";
+    assign bits_out[0] = "1";
 
     localparam  RST = 1,
                 RST_N = 0;
@@ -27,7 +27,10 @@ module bit_input(clk, bit_out, reset, addr);
     always @(*)
     begin 
         bit_out_d = bits_out[addr_q - 1];
-        addr_d = addr_q + 1;
+        if (addr_q >= 4'd8)
+            addr_d = 4'd1;
+        else
+            addr_d = addr_q + 1;
     end
     
     always @(negedge reset)
