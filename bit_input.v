@@ -26,14 +26,14 @@ module bit_input(clk, bit_out, reset, addr);
 
     always @(*)
     begin 
-        bit_out_d = bits_out[addr_q - 1];
-        if (addr_q >= 4'd8)
-            addr_d = 4'd1;
+        bit_out_d = bits_out[addr_q];
+        if (addr_q >= 4'd7)
+            addr_d = 4'b0;
         else
             addr_d = addr_q + 1;
     end
     
-    always @(negedge reset)
+    always @(posedge reset)
     begin
         addr_d = 4'b0;
         bit_out_d = 8'b0;

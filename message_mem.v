@@ -8,15 +8,15 @@ module message_mem(clk, reset, addr,bit_in, byte_out);
     
     assign byte_out = byte_out_q;
 
-    always @(*)
+    always @(addr) 
     begin
         if (!reset)
         begin
             if (bit_in == "1")
-                byte_out_d[addr - 2] = 1'b1;
+                byte_out_d[addr - 1] = 1'b1;
 
             else if (bit_in == "0")
-                byte_out_d[addr - 2] = 1'b0;
+                byte_out_d[addr - 1] = 1'b0;
         end
         
         else
