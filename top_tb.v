@@ -7,7 +7,7 @@ module top_tb;
         $dumpvars(0,top_tb);
         # 1 rst = 1;
         # 4 rst = 0; 
-        # 50 $finish;
+        # 150 $finish;
     end
 
     wire clk;

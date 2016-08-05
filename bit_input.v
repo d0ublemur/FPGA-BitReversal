@@ -11,35 +11,50 @@ module bit_input(clk, bit_out, reset, addr);
     assign bit_out = bit_out_q;
     assign addr    = addr_q;
 
-    assign bits_out[7] = "0";
-    assign bits_out[6] = "0";
-    assign bits_out[5] = "0";
-    assign bits_out[4] = "0";
-    assign bits_out[3] = "1";
-    assign bits_out[2] = "1";
+    assign bits_out[7] = "1";
+    assign bits_out[6] = "1";
+    assign bits_out[5] = "1";
+    assign bits_out[4] = "1";
+    assign bits_out[3] = "0";
+    assign bits_out[2] = "0";
     assign bits_out[1] = "1";
-    assign bits_out[0] = "1";
+    assign bits_out[0] = "0";
 
-    localparam  RST = 1,
-                RST_N = 0;
-               
 
-    always @(*)
-    begin 
-        bit_out_d = bits_out[addr_q];
+/*
+* This is to simulate the "random" times input would come from
+* the keyboard.
+*/
+    
+    initial
+    begin
+        #10 bit_out_d=bits_out[0];
+        #4 bit_out_d=bits_out[1];
+        #1 bit_out_d=bits_out[2];
+        #8 bit_out_d=bits_out[3];
+        #6 bit_out_d=bits_out[4];
+        #2 bit_out_d=bits_out[5];
+        #6 bit_out_d=bits_out[6];
+        #7 bit_out_d=bits_out[7];
+    end
+ 
+
+/*
+* I am trying to iterate address only when a new input from the keyboard is
+* accepted, but if two bits have the same value, it will not see that as a
+* as a change. I will have to work on this some more.
+*/
+  
+    always @(bit_out_q)
+    begin
         if (addr_q >= 4'd7)
             addr_d = 4'b0;
         else
             addr_d = addr_q + 1;
     end
     
-    always @(posedge reset)
-    begin
+    always @(negedge reset)
         addr_d = 4'b0;
-        bit_out_d = 8'b0;
-        
-    end
-        
         
     always @(posedge clk)
     begin
